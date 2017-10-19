@@ -1,10 +1,12 @@
 ﻿using System;
 
-namespace MyGlobal
+namespace SceneGlobals
 {
 	public class Global
 	{
-		public static bool player_moves = true;
+		public static bool playerCanShoot = true;
+		public static bool enemyCanShoot  = false;
+		public static bool enemyWasHit    = false;
 	}
 }
 

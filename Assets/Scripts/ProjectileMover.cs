@@ -27,6 +27,8 @@ public class ProjectileMover : MonoBehaviour {
 		if (other.name == "EnemyHard") 
 		{
 			Destroy (gameObject);
+			SceneGlobals.Global.enemyWasHit = true;
+			SceneGlobals.Global.enemyCanShoot = true;
 		}
 		else if (other.name == "Player") 
 		{
@@ -34,11 +36,11 @@ public class ProjectileMover : MonoBehaviour {
 			PlayerScript p = (PlayerScript)other.GetComponent<MonoBehaviour>();
 
 			p.health -= 10;
-		
 			GameObject guiObject = other.gameObject.transform.Find ("GuiText").gameObject;
 			guiObject.GetComponent<GUIText> ().text = "HP: " + p.health;
 		
-
+			SceneGlobals.Global.enemyWasHit = false;
+			SceneGlobals.Global.playerCanShoot = true;
 		}
 	}
 
