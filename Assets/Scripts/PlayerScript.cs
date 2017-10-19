@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour {
 	public ProjectileMover shot;
 	public Transform shotSpawn;
 
-	public float health;
+	public float health = 100;
 
 	// Update is called once per frame
 	void Update () {

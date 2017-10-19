@@ -6,7 +6,8 @@ public class EnemyScript : MonoBehaviour {
 
 	public ProjectileMover shot;
 	public Transform shotSpawn;
-	public int health = 100;
+
+	public float health = 100;
 
 	
 	// Update is called once per frame

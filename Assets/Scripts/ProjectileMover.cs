@@ -34,7 +34,10 @@ public class ProjectileMover : MonoBehaviour {
 			PlayerScript p = (PlayerScript)other.GetComponent<MonoBehaviour>();
 
 			p.health -= 10;
-			Debug.Log (p.health);
+		
+			GameObject guiObject = other.gameObject.transform.Find ("GuiText").gameObject;
+			guiObject.GetComponent<GUIText> ().text = "HP: " + p.health;
+		
 
 		}
 	}
