@@ -26,7 +26,7 @@ public class ProjectileMover : MonoBehaviour {
 
 		if (other.name == "EnemyHard") 
 		{
-			Destroy (gameObject);
+			Destroy (gameObject); 
 			SceneGlobals.Global.enemyWasHit = true;
 			SceneGlobals.Global.enemyCanShoot = true;
 		}
