@@ -28,6 +28,14 @@ public class ProjectileMover : MonoBehaviour {
 		if (other.name == "EnemyHard") 
 		{
 			Destroy (gameObject); 
+
+			EnemyScript e = other.gameObject.GetComponent<EnemyScript> ();
+			e.health -= damage;
+
+			GameObject guiObject = other.gameObject.transform.Find ("GuiText").gameObject;
+			guiObject.GetComponent<GUIText> ().text = "HP: " + e.health;
+
+
 			SceneGlobals.Global.enemyWasHit = true;
 			SceneGlobals.Global.enemyCanShoot = true;
 		}
