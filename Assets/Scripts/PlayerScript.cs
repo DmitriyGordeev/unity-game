@@ -8,6 +8,11 @@ public class PlayerScript : MonoBehaviour {
 	public Transform shotSpawn;
 	public float health = 100;
 
+	public PlayerScript() {
+		health = 100;
+	}
+		
+
 
 	// Update is called once per frame
 	void Update () {
