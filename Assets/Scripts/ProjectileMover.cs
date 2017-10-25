@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ProjectileMover : MonoBehaviour {
 
-	public ProjectileMover(float vel) {
+	public ProjectileMover(float vel, float damage) {
 		velocity = vel;
+		this.damage = damage;
 	}
 
-	public float velocity = 10.0f; 
-	public int damage = 10;
+	public float velocity;
+	public float damage;
 
 	void Start()
 	{
@@ -33,12 +34,8 @@ public class ProjectileMover : MonoBehaviour {
 		else if (other.name == "Player") 
 		{
 			Destroy (gameObject);
-			PlayerScript p = (PlayerScript)other.GetComponent<MonoBehaviour>();
-
-			Debug.Log ("Before : p.health = " + p.health);
-			p.health -= 10;
-			Debug.Log ("After  : p.health = " + p.health);
-
+			PlayerScript p = other.gameObject.GetComponent<PlayerScript> ();
+			p.health -= damage;
 
 			GameObject guiObject = other.gameObject.transform.Find ("GuiText").gameObject;
 			guiObject.GetComponent<GUIText> ().text = "HP: " + p.health;

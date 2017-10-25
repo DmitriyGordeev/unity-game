@@ -18,6 +18,7 @@ public class EnemyScript : MonoBehaviour {
 	void Attack() {
 		ProjectileMover pm = Instantiate (shot, shotSpawn.position, shotSpawn.rotation) as ProjectileMover;
 		pm.velocity = -7;
+		pm.damage = 10;
 	}
 
 	
