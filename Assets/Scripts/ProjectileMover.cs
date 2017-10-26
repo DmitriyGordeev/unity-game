@@ -38,7 +38,7 @@ public class ProjectileMover : MonoBehaviour {
 
 			SceneGlobals.Global.enemyWasHit = true;
 			SceneGlobals.Global.enemyCanShoot = true;
-		}
+		} 
 		else if (other.name == "Player") 
 		{
 			Destroy (gameObject);
